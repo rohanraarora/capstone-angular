@@ -1,0 +1,24 @@
+<div *ngIf="isLoading" class="loader_container">
+  <md-progress-spinner id="events_loader" mode="indeterminate"></md-progress-spinner>
+</div>
+<md-nav-list *ngIf="!isLoading">
+  <a *ngFor="let event of events" [routerLink]="['/event', event.id]">
+    <div class="card_item">
+      <md-card class="event_card">
+        <img md-card-image src="{{event.cover_image_url}}">
+        <md-card-title>{{event.title}}</md-card-title>
+        <md-card-content>
+          <p>
+            {{event.description}}
+          </p>
+          <p class="location">
+            <md-icon>location_on</md-icon> {{event.venue_title}}
+          </p>
+        </md-card-content>
+        <md-card-actions>
+          <a href="{{event.ticket_url}}" target="_blank"> <button md-button>REGISTER</button></a>
+        </md-card-actions>
+      </md-card>
+    </div>
+  </a>
+</md-nav-list>

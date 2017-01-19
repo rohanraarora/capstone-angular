@@ -1,0 +1,23 @@
+<div *ngIf="isLoading" class="loader_container">
+  <md-progress-spinner id="news_loader" mode="indeterminate"></md-progress-spinner>
+</div>
+<md-nav-list *ngIf="!isLoading">
+  <div class="card_item" *ngFor="let news of newsList">
+    <md-card class="event_card">
+      <img md-card-image src="{{news.cover_image_url}}">
+      <md-card-title>{{news.title}}</md-card-title>
+      <md-card-content>
+        <p>
+          {{news.content}}
+        </p>
+      </md-card-content>
+      <md-card-actions>
+        <a href="{{news.url}}" target="_blank">
+          <span id="link">
+            <button md-button><md-icon>open_in_new</md-icon>  OPEN</button>
+          </span>
+        </a>
+      </md-card-actions>
+    </md-card>
+  </div>
+</md-nav-list>

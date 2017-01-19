@@ -1,0 +1,15 @@
+:host{
+  height: 100%;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+#about_content{
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  display: flex;
+}
